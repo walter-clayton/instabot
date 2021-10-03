@@ -77,7 +77,7 @@ class InstagramBot:
 
 if __name__ == "__main__":
 
-    ig = InstagramBot('clayton.tech', 'spongei94')
+    ig = InstagramBot('username', 'password')
     ig.login()
 
     hashtags = ['brussels', 'belgium']
