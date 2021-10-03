@@ -3,8 +3,9 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
 import random
-import sys
+import sys, os
 
+sys.path.append(os.path.join(sys.path[0], "../../"))
 
 def print_same_line(text):
     sys.stdout.write('\r')
@@ -39,6 +40,7 @@ class InstagramBot:
         passworword_elem.send_keys(self.password)
         passworword_elem.send_keys(Keys.RETURN)
         time.sleep(5)
+        bot.upload_photo("book.png", caption="My top book for the year 2020. Product Led Growth gives you a good insight on how to build a SAAS product that can sell. Post Designed with @canva #belgiumtechnology #tech2021 #techpodcast #saas #toptechbook #webdeveloper #frontenddeveloper")
         
     def like_photo(self, hashtag):
         driver = self.driver
@@ -67,6 +69,7 @@ class InstagramBot:
         for pic_href in pic_hrefs:
             driver.get(pic_href)
             like_button = driver.find_element_by_xpath('/html[1]/body[1]/div[1]/section[1]/main[1]/div[1]/div[1]/article[1]/div[3]/section[1]/span[1]/button[1]')
+            time.sleep(5)
             like_button.click()
             time.sleep(2)
             driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
@@ -74,7 +77,7 @@ class InstagramBot:
 
 if __name__ == "__main__":
 
-    ig = InstagramBot('USERNAME', 'PASSWORD')
+    ig = InstagramBot('clayton.tech', 'spongei94')
     ig.login()
 
     hashtags = ['brussels', 'belgium']

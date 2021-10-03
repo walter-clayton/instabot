@@ -4,3 +4,8 @@
 
 * pip install selenium
 * download [chrome webdriver](https://chromedriver.chromium.org/downloads) or [firefox gecodriver](https://github.com/mozilla/geckodriver/releases)
+
+** **
+* download the chromedriver
+* got to the directory of the chromedriver
+* Type `mv chromedriver /usr/local/bin`
